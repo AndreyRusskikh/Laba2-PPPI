@@ -154,7 +154,7 @@ namespace Laba3
             {
                 TKey key = keySelector(worker);
                 workerDictionary[key] = worker;
-
+                worker.PropertyChanged += StationWorker_PropertyChanged;
                 OnWorkersChanged(new WorkersChangedEventArgs<TKey>(CollectionName, Update.Add, "workerDictionary", key));
             }
         }
